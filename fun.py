@@ -43,7 +43,18 @@ def rockandpaperscirros():
         if b == 1:
             print("Draw!")
 
-
+def guesword():
+    word = ["Gemcast","Username","Password"]
+    random_word = random.choice(word)
+    guess_word = ""
+    while guess_word!= random_word:
+        guess_word = input(f"Guess the word ({len(random_word)} letters): ")
+        if guess_word == random_word:
+            print("Congratulations! You Win!")
+        elif len(guess_word) < len(random_word):
+            print("Too short!")
+        else:
+            print("Too long!")
 
 while True:
     t.sleep(2)
@@ -51,9 +62,11 @@ while True:
     print("Choose To Play That game")
     print("1. Guess Number")
     print("2. Rps")
+    print("3. guess the word")
     a = input("[Choose]>")
     if a == "1":
         random_number()
     elif a == "2":
         rockandpaperscirros()
-    
+    elif a == "3":
+        guesword()
